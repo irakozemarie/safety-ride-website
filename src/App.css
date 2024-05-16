@@ -1,0 +1,7 @@
+  .div{
+  height: 88vh;
+  background-image: url(/car1.jpg);
+  background-position:initial;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
