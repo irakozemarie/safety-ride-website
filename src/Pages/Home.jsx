@@ -1,11 +1,11 @@
-
 import { FaCar } from "react-icons/fa6";
 import { GrCaretDown } from "react-icons/gr";
 import { AiOutlineCheck } from "react-icons/ai";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-
-const Home = () => {
+const Home = ({ history }) => {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -53,9 +53,13 @@ const Home = () => {
       console.log("Form submission failed. Please check your inputs.");
     }
   };
+  const handleBookRideClick = () => {
+    // Navigate to the booking page
+    history.push("/booking"); // Replace '/booking' with the actual path of your booking page
+  };
   return (
     <>
-      <section className="relative bg-[url(car1.jpg)] bg-cover  rounded-lg  bg-center bg-no-repeat">
+      <section className="relative bg-[url(car1.jpg)] bg-cover  rounded-lg m-4 bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
 
         <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
@@ -77,13 +81,13 @@ const Home = () => {
             <div class="mt-8 flex flex-wrap justify-center gap-4">
               <a
                 class="block w-full rounded bg-green-500 px-12 py-3 text-sm font-medium text-white shadow hover:bg-green-500 focus:outline-none focus:ring active:bg-green-500 sm:w-auto"
-                href="#"
+                onClick={handleBookRideClick}
               >
-                Book Your Ride
+                Book your Ride
               </a>
 
               <a
-                class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto"
+                className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto"
                 href="#"
               >
                 Learn More
@@ -516,7 +520,7 @@ const Home = () => {
               Clients Testimonial
             </h2>
 
-            <p className="mt-4 text-2xl text-gray-300">
+            <p className="mt-4 text-4xl text-gray-600">
               We move with speed and precision
             </p>
           </div>
@@ -670,7 +674,7 @@ const Home = () => {
             <img
               alt=""
               src="/car1.jpg"
-              className="absolute inset-0  rounded-lg h-full w-full object-cover"
+              className="absolute inset-0  rounded-lg h-full w-full object-cover "
             />
           </aside>
 
@@ -798,7 +802,6 @@ const Home = () => {
           </main>
         </div>
       </section>
-      <br />
       <br />
       <br />
     </>
