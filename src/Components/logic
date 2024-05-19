@@ -1,0 +1,13 @@
+listaDrivers=["driver1","driver2","driver3"] driver='' for driver in
+listaDrivers:
+
+<li (click)="getDriver(driver)">driver.name</li>
+<li />
+
+getDriver(data:stri): this.driver=data console.lo(id) display driver det
+
+<div if="driver">
+  <p>driver.name</p>
+  <p>driver.phonenumber</p>
+  <p>driver.location</p>
+</div>
