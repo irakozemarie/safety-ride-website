@@ -37,14 +37,14 @@ function Login() {
   };
 
   return (
-    <div className="flex justify-center bg-cyan-700 p-36">
+    <div className="flex justify-center bg-white p-36">
       <form
         onSubmit={handleSubmit}
-        className="w-full px-6 py-8 mt-10 mb-11 bg-cyan-300 rounded-lg shadow-lg"
+        className="bg-green-200 p-24   m-auto rounded-xl shadow-xl w-[782px] "
       >
-        <p className="text-center text-lg font-medium text-black mb-4">
+        <h2 className="text-3xl font-semibold text-center  text-black uppercase mb-16">
           LOG IN
-        </p>
+        </h2>
 
         <div className="mb-4">
           <label htmlFor="email" className="sr-onl"></label>
@@ -52,7 +52,7 @@ function Login() {
             type="email"
             value={email}
             onChange={handleEmailChange}
-            className={`w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm ${
+            className={`w-full rounded-lg border-gray-200 bg-white  p-4 text-sm shadow-sm ${
               errors.email ? "text-red-500" : ""
             }`}
             placeholder="Email"
@@ -61,6 +61,7 @@ function Login() {
             <p className="text-sm text-red-500 mt-1">{errors.email}</p>
           )}
         </div>
+        <br />
 
         <div className="mb-4">
           <label htmlFor="password" className="sr-only">
@@ -70,7 +71,7 @@ function Login() {
             type="password"
             value={password}
             onChange={handlePasswordChange}
-            className={`w-full rounded-lg border-gray-200 p-4 bg-cyan-200 text-black text-sm shadow-sm ${
+            className={`w-full rounded-lg border-gray-200 p-4 bg-white  text-sm shadow-sm ${
               errors.password ? "border-red-500" : ""
             }`}
             placeholder="Password"
@@ -79,10 +80,11 @@ function Login() {
             <p className="text-sm text-red-500 mt-1">{errors.password}</p>
           )}
         </div>
+        <br />
 
         <button
           type="submit"
-          className="w-full rounded-lg bg-cyan-500 px-5 py-3 text-sm font-medium text-black mb-4"
+          className="w-full rounded-lg bg-green-700 px-5 py-3 text-sm font-medium text-green-100 mb-4"
         >
           Sign in
         </button>
@@ -108,6 +110,7 @@ function Login() {
 
         <p className="text-center text-sm text-gray-500">
           Change password{" "}
+          
           <NavLink to="/Profile" className="text-black">
             Profile
           </NavLink>

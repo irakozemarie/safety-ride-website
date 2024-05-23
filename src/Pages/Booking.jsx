@@ -28,7 +28,7 @@ const Booking = () => {
         onSubmit={handleSubmit}
         className="mb-0 mt-20 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
       >
-        <APIProvider apiKey="AIzaSyBzXTSmfDvaLJMbDMZhkuo14dzjZQbUxdQ">
+        {/* <APIProvider apiKey="AIzaSyBzXTSmfDvaLJMbDMZhkuo14dzjZQbUxdQ">
           <div style={{ height: "50vh", width: "100vh", marginTop: "10vh" }}>
             <Map zoom={7} center={position}>
               <AdvancedMarker position={position}>
@@ -40,7 +40,18 @@ const Booking = () => {
               </AdvancedMarker>
             </Map>
           </div>
-        </APIProvider>
+        </APIProvider> */}
+        <div className="w-['80%'], h-['45%']">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15950.161760019742!2d30.0842383!3d-1.9361865!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca700529a46dd%3A0x83ce85b4f5f51295!2sKacyiru%20Police%20Station!5e0!3m2!1sen!2srw!4v1716209492699!5m2!1sen!2srw"
+            // width="600"
+            // height="450"
+            // style="border:0;"
+            // allowfullscreen=""
+            // loading="lazy"
+            // referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
 
         <div>
           <label htmlFor="PickupLocation" className="sr-only">

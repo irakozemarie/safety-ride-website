@@ -70,7 +70,7 @@ function ResetPassword() {
 
           <p className="text-center text-sm text-gray-500 mt-4">
             Remember your password?{" "}
-            <a className="text-black" href="/">
+            <a className="text-black" href="/Login">
               Sign In
             </a>
           </p>

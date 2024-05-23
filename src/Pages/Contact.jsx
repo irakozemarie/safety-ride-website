@@ -1,6 +1,8 @@
 
 
 import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { GrFormNext } from "react-icons/gr";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -48,6 +50,41 @@ const Contact = () => {
 
   return (
     <>
+      <section className="relative bg-[url(car1.jpg)] bg-cover bg-center bg-no-repeat">
+        <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
+
+        <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+          <div class="mx-auto max-w-xl text-center">
+            <nav className=" flex flex-row  p-4">
+              <div className="container mx-auto flex   justify-center items-center">
+                <Link to="/" className="text-white font-semibold text-lg ">
+                  Home
+                </Link>
+
+                <NavLink
+                  to="/"
+                  className="text-green-600 mr-6 ml-6"
+                  style={{ cursor: "pointer" }}
+                >
+                  <GrFormNext className="text-2xl" />{" "}
+                </NavLink>
+
+                <NavLink
+                  to="/service"
+                  className="text-white font-semibold text-lg"
+                  style={{ cursor: "pointer" }}
+                >
+                  Contact
+                </NavLink>
+              </div>
+            </nav>
+            <h1 class="text-3xl text-white font-bold sm:text-4xl">
+              Experience Convenience Our Service Offerings
+            </h1>
+          </div>
+        </div>
+      </section>
+      <br /><br />
       <form onSubmit={handleSubmit} className="max-w-md mx-auto">
         <div className="mb-10">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-1">
