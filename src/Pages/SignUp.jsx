@@ -68,36 +68,60 @@ const SignUp = () => {
     return valid;
   };
 
-  const handleSignUp = async (e) => {
+  // const handleSignUp = async (e) => {
+  //   e.preventDefault();
+
+  //   const form = {
+  //     userName: userName,
+  //     email: email,
+  //     password: password,
+  //     role: role,
+  //   };
+  //   // console.log(form);
+  //   // if (!isValid(e))
+  //   const response = await axios
+  //     .post(
+  //       "https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signup",
+  //       form
+  //     )
+  //     .then((response) => {
+  //       console.log("response",response.data);
+  //     })
+  //     .catch((error) => console.log(error));
+  //   console.log(response);
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!isValid(e)) return; // Validate form fields
+    const form = {
+      userName: userName,
+      email: email,
+      password: password,
+      role: role,
+    };
+    // console.log(form);
 
     try {
       const response = await axios.post(
         "https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signup",
-        {
-          userName: userName,
-          email: email,
-          password: password,
-          // role: role, // Include selected role in the signup data
-        }
+        form
       );
-      console.log(response);
-      setTimeout(() => {
-        navigate("/OTP");
-      }, 2000);
+      console.log("response", response.data);
+      // Optionally, you can redirect the user after successful signup
+      // navigate('/success');
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
-  return (
+
+  return (  
     <div className="bg-white border-blackflex flex-col justify-center min-h-screen  overflow-hidden p-32">
       <div className="bg-green-200 p-24   m-auto rounded-xl shadow-xl w-[782px] ">
         <h2 className="text-3xl font-semibold text-center  text-black uppercase mb-16">
           Sign Up
         </h2>
-        <form onSubmit={isValid}>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
               className="border-2 rounded-lg text-black px-4 py-2 w-full bg-white"
@@ -139,26 +163,23 @@ const SignUp = () => {
           <br />
 
           {/* New select input for role */}
-          {/* <div className="mb-4">
+
+          <div className="mb-4">
             <select
-              className="border-2 rounded-lg px-4 py-2 text-black w-full bg-cyan-200"
+              className="border-2 rounded-lg px-4 py-2 text-black w-full bg-white"
               value={role}
               onChange={(e) => setRole(e.target.value)}
             >
-
-
-
-
               <option value="">Select Role</option>
               <option value="customer">Customer</option>
               <option value="driver">Driver</option>
             </select>
             {roleError && <p className="text-red-500">{roleError}</p>}
-          </div> */}
+          </div>
           <button
             className="w-[150px] px-4  py-2 tracking-wide  bg-green-700 rounded-xl text-white transition-colors duration-200 transform bg-black-700  hover: bg-white-600 focus:outline-none  ml-56 focus:bg-black-600"
             type="submit"
-            onClick={handleSignUp}
+            onClick={handleSubmit}
           >
             Sign Up
           </button>

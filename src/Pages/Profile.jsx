@@ -113,7 +113,7 @@ function ProfileForm() {
     <div className="flex justify-center bg-white p-36">
       <div>
         <h1
-          className="text-center text-2xl mb-32"
+          className="text-center text-2xl mb-16"
           style={{
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
             padding: "10px",
@@ -125,7 +125,7 @@ function ProfileForm() {
 
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-2 gap-8 w-full px-6 py-8 mt-10 mb-11 bg-green-300 rounded-lg shadow-lg"
+          className="grid grid-cols-2 gap-8 w-full px-6 py-8 mt-4 mb-11 bg-green-200 rounded-lg shadow-lg"
         >
           <div>
             {/* Profile Picture */}
@@ -134,7 +134,7 @@ function ProfileForm() {
               <input
                 type="file"
                 onChange={(e) => setProfilePicture(e.target.value)}
-                className="w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 bg-white text-gray-400 p-4 text-sm shadow-sm"
               />
               {errors.profilePicture && (
                 <p className="text-red-500">{errors.profilePicture}</p>
@@ -149,7 +149,7 @@ function ProfileForm() {
                 type="text"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                className="w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 bg-white text-gray-400  p-4 text-sm shadow-sm"
               />
               {errors.address && (
                 <p className="text-red-500">{errors.address}</p>
@@ -161,7 +161,7 @@ function ProfileForm() {
             <label className="block text-black">
               Cost per Hour:
               <div className="flex items-center">
-                <span className="bg-cyan-200 text-black p-4 text-sm rounded-l-lg border-gray-200 shadow-sm">
+                <span className="bg-white text-gray-400  p-4 text-sm rounded-l-lg border-gray-200 shadow-sm">
                   $
                 </span>
                 <input
@@ -171,7 +171,7 @@ function ProfileForm() {
                     validateCostPerHour(e.target.value) &&
                     setCostPerHour(e.target.value)
                   }
-                  className="w-full rounded-r-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
+                  className="w-full rounded-r-lg border-gray-200 bg-white text-black p-4 text-sm shadow-sm"
                   placeholder="Enter amount in Dollars"
                 />
               </div>
@@ -189,7 +189,7 @@ function ProfileForm() {
                 value={phoneNumber}
                 onChange={handlePhoneNumberChange}
                 pattern="\d{0,13}"
-                className="w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 bg-white text-black p-4 text-sm shadow-sm"
                 placeholder="Phone Number (e.g., +250782387280)"
               />
               {errors.phoneNumber && (
@@ -204,7 +204,7 @@ function ProfileForm() {
               <select
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
-                className="w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 bg-white text-black p-4 text-sm shadow-sm"
               >
                 <option value="">Select</option>
                 <option value="male">Male</option>
@@ -223,7 +223,7 @@ function ProfileForm() {
               <textarea
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
-                className="w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 bg-white text-black p-4 text-sm shadow-sm"
               ></textarea>
               {errors.bio && <p className="text-red-500">{errors.bio}</p>}
             </label>
@@ -234,14 +234,13 @@ function ProfileForm() {
               <select
                 value={drivingLicenseCategory}
                 onChange={(e) => setDrivingLicenseCategory(e.target.value)}
-                className="w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 bg-white text-black p-4 text-sm shadow-sm"
               >
                 <option value="">Select</option>
                 <option value="A">B</option>
                 <option value="B">B1</option>
                 <option value="C">C</option>
                 <option value="D">C1</option>
-
               </select>
               {errors.drivingLicenseCategory && (
                 <p className="text-red-500">{errors.drivingLicenseCategory}</p>
@@ -255,7 +254,7 @@ function ProfileForm() {
               <input
                 type="file"
                 onChange={(e) => setDrivingLicensePicture(e.target.value)}
-                className="w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 bg-white text-black p-4 text-sm shadow-sm"
               />
               {errors.drivingLicensePicture && (
                 <p className="text-red-500">{errors.drivingLicensePicture}</p>
@@ -267,7 +266,7 @@ function ProfileForm() {
             <label className="block text-black">
               Spoken Languages:
               <div>
-                <div className="flex flex-col items-center bg-cyan-200">
+                <div className="flex flex-col items-center bg-white">
                   <label className="inline-flex items-center w-full">
                     <input
                       type="checkbox"
@@ -331,7 +330,7 @@ function ProfileForm() {
                   />
                   <div
                     className={`w-6 h-6 border rounded-full border-black flex items-center justify-center focus-within:border-black ${
-                      hasCar ? "bg-cyan-700" : ""
+                      hasCar ? "bg-green-700" : ""
                     }`}
                   >
                     <span className="sr-only">Yes</span>
@@ -349,7 +348,7 @@ function ProfileForm() {
                   />
                   <div
                     className={`w-6 h-6 border rounded-full border-black flex items-center justify-center focus-within:border-black ${
-                      !hasCar ? "bg-cyan-700" : ""
+                      !hasCar ? "bg-green-700" : ""
                     }`}
                   >
                     <span className="sr-only">No</span>
@@ -364,7 +363,7 @@ function ProfileForm() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="col-span-2 w-full rounded-lg bg-cyan-500 px-5 py-3 text-sm font-medium text-black mb-4"
+            className="col-span-2 w-full rounded-lg bg-green-700 px-5 py-3 text-sm font-medium text-black mb-4"
           >
             Submit
           </button>

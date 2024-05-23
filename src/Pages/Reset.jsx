@@ -32,11 +32,11 @@ function ResetPassword() {
   };
 
   return (
-    <div className="mx-auto max-w-screen-xl bg-cyan-700 p-36">
+    <div className="mx-auto max-w-screen-xl p-36">
       <div className="mx-auto max-w-lg">
         <form
           onSubmit={handleSubmit}
-          className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-cyan-300"
+          className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-green-200"
         >
           <p className="text-center text-lg font-medium text-black">
             Forgot Password?
@@ -51,7 +51,7 @@ function ResetPassword() {
               type="email"
               value={email}
               onChange={handleEmailChange}
-              className={`w-full rounded-lg border-gray-200 bg-cyan-200 p-4 text-black text-sm shadow-sm  ${
+              className={`w-full rounded-lg border-gray-200 bg-white p-4 text-black text-sm shadow-sm  ${
                 errors.email ? "border-red-500" : ""
               }`}
               placeholder="Email"
@@ -63,7 +63,7 @@ function ResetPassword() {
 
           <button
             type="submit"
-            className="block w-full rounded-lg bg-cyan-700 px-5 py-3 text-sm font-medium text-black"
+            className="block w-full rounded-lg bg-green-700 px-5 py-3 text-sm font-medium text-green-100"
           >
             Reset Password
           </button>

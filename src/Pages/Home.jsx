@@ -61,8 +61,6 @@ const Home = () => {
   return (
     <>
       <section className="relative bg-[url(car1.jpg)] bg-cover  rounded-lg m-0 bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
-
         <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
           <div className="mx-auto max-w-xl text-center">
             <div>
@@ -92,17 +90,18 @@ const Home = () => {
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               {" "}
-              <a href="/booking" className="cursor-pointer">
+              <Link to={"/booking"}>
                 <button className="w-full rounded bg-green-500 px-12 py-3 text-sm font-medium text-white shadow hover:bg-green-500 focus:outline-none focus:ring active:bg-green-500 sm:w-auto">
                   Book your Ride
                 </button>
-              </a>
-              <button
-                className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto"
-                href="#"
-              >
-                <a href="">Learn More</a>
-              </button>
+              </Link>
+              <Link to={"/Login"}>
+                <button
+                  className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto"
+                >
+                  Become a Driver
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -325,7 +324,7 @@ const Home = () => {
 
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 ">
             <a
-              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-green-500 hover:shadow-green-500"
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-green-100 hover:shadow-green-100"
               href="#"
             >
               <svg
@@ -357,7 +356,7 @@ const Home = () => {
             </a>
 
             <a
-              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-green-100 hover:shadow-green-100"
               href="#"
             >
               <svg
@@ -389,7 +388,7 @@ const Home = () => {
             </a>
 
             <a
-              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-green-100 hover:shadow-green-100"
               href="#"
             >
               <svg
@@ -421,7 +420,7 @@ const Home = () => {
             </a>
 
             <a
-              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-green-100 hover:shadow-green-100"
               href="#"
             >
               <svg
@@ -453,7 +452,7 @@ const Home = () => {
             </a>
 
             <a
-              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-green-100 hover:shadow-green-100"
               href="#"
             >
               <svg
@@ -485,7 +484,7 @@ const Home = () => {
             </a>
 
             <a
-              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-green-100 hover:shadow-green-100"
               href="#"
             >
               <svg
