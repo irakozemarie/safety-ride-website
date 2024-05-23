@@ -3,8 +3,10 @@ import { GrCaretDown } from "react-icons/gr";
 import { AiOutlineCheck } from "react-icons/ai";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Home = ({ history }) => {
+
+const Home = () => {
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -53,45 +55,54 @@ const Home = ({ history }) => {
       console.log("Form submission failed. Please check your inputs.");
     }
   };
-  const handleBookRideClick = () => {
-    // Navigate to the booking page
-    history.push("/booking"); // Replace '/booking' with the actual path of your booking page
+  const navigateToBooking = () => {
+    navigate("/booking");
   };
   return (
     <>
-      <section className="relative bg-[url(car1.jpg)] bg-cover  rounded-lg m-4 bg-center bg-no-repeat">
+      <section className="relative bg-[url(car1.jpg)] bg-cover  rounded-lg m-0 bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
 
-        <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
-          <div class="mx-auto max-w-xl text-center">
-            <h1 class="text-3xl text-white font-extrabold sm:text-5xl">
-              Get Where You Need to Go,
-              <strong class="font-extrabold text-white sm:block">
-                {" "}
+        <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+          <div className="mx-auto max-w-xl text-center">
+            <div>
+              <h1
+                style={{ fontSize: 45, color: "white" }}
+                className="font-extralight"
+              >
+                Get Where You Need to Go
+              </h1>
+              <p
+                style={{ fontSize: 28 }}
+                className="font-extralight text-white sm:block"
+              >
+                {/* {" "} */}
                 Safely and Affordably.{" "}
-              </strong>
-            </h1>
+              </p>
+            </div>
 
-            <p class="mt-4  text-white sm:text-xl/relaxed">
+            <p
+              className="mt-4  text-gray-300 font-extralight "
+              style={{ fontSize: 20 }}
+            >
               Ride service refers to the transportation of passengers from one
               location to the another using a hired vehicle. It offers a
               convenient transport
             </p>
 
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-              <a
-                class="block w-full rounded bg-green-500 px-12 py-3 text-sm font-medium text-white shadow hover:bg-green-500 focus:outline-none focus:ring active:bg-green-500 sm:w-auto"
-                onClick={handleBookRideClick}
-              >
-                Book your Ride
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              {" "}
+              <a href="/booking" className="cursor-pointer">
+                <button className="w-full rounded bg-green-500 px-12 py-3 text-sm font-medium text-white shadow hover:bg-green-500 focus:outline-none focus:ring active:bg-green-500 sm:w-auto">
+                  Book your Ride
+                </button>
               </a>
-
-              <a
+              <button
                 className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto"
                 href="#"
               >
-                Learn More
-              </a>
+                <a href="">Learn More</a>
+              </button>
             </div>
           </div>
         </div>
@@ -163,7 +174,7 @@ const Home = ({ history }) => {
       <section>
         <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-            <div className="relative z-10 lg:py-16">
+            <div className="relative  lg:py-16">
               <div className="relative h-64 sm:h-80 lg:h-full">
                 <img
                   alt=""
@@ -697,17 +708,24 @@ const Home = ({ history }) => {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="FirstName"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     First Name
                   </label>
 
-                  <input
+                  {/* <input
                     type="text"
                     id="FirstName"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                  /> */}
+                  <input
+                    type="text"
+                    id="Firstname"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-500"
                   />
                   {errors.firstName && (
                     <p className="text-red-500">{errors.firstName}</p>
@@ -717,17 +735,17 @@ const Home = ({ history }) => {
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="LastName"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     Last Name
                   </label>
 
                   <input
                     type="text"
-                    id="LastName"
+                    id="Laststname"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-500"
                   />
                   {errors.lastName && (
                     <p className="text-red-500">{errors.lastName}</p>
@@ -737,18 +755,17 @@ const Home = ({ history }) => {
                 <div className="col-span-6">
                   <label
                     htmlFor="Email"
-                    className="block text-gray-700 font-bold mb-1"
+                    className="block text-gray-700 font-bold mb-2"
                   >
                     {" "}
                     Email{" "}
                   </label>
-
                   <input
-                    type="email"
+                    type="text"
                     id="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-500"
                   />
                   {errors.email && (
                     <p className="text-red-500">{errors.email}</p>
@@ -757,18 +774,18 @@ const Home = ({ history }) => {
                 <div className="col-span-6">
                   <label
                     htmlFor="Subject"
-                    className="block text-sm font-medium text-gray-700"
+                    className="block text-sm font-medium text-gray-700 mb-2"
                   >
                     {" "}
                     Subject{" "}
                   </label>
 
                   <input
-                    type="subject"
+                    type="text"
                     id="Subject"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                    className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-green-500"
                   />
                   {errors.subject && (
                     <p className="text-red-500">{errors.subject}</p>
@@ -777,7 +794,7 @@ const Home = ({ history }) => {
                 <div className="col-span-6">
                   <label
                     htmlFor="message"
-                    className="block text-gray-700 font-bold mb-1"
+                    className="block text-gray-700 font-bold mb-2"
                   >
                     Message
                   </label>

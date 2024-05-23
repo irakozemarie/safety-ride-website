@@ -12,6 +12,8 @@ import UpdatePassword from "./Pages/Update";
 import ProfileForm from "./Pages/Profile";
 import OTP from "./Pages/OTP";
 import Booking from "./Pages/Booking";
+import Login from "./Pages/Login";
+import DriverDashboard from "./Components/DriverDashboard";
 
 const Layout = () => {
   return (
@@ -38,6 +40,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/driverDashboard" element={<DriverDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

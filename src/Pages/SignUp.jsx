@@ -79,7 +79,7 @@ const SignUp = () => {
           userName: userName,
           email: email,
           password: password,
-          role: role, // Include selected role in the signup data
+          // role: role, // Include selected role in the signup data
         }
       );
       console.log(response);
@@ -92,13 +92,15 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bg-cyan-700 border-black min-h-screen flex justify-center items-center p-36">
-      <div className="bg-cyan-300 p-8 rounded-lg shadow-md">
-        <h2 className="text-3xl font-italic mb-4 text-black">Sign Up</h2>
+    <div className="bg-white border-blackflex flex-col justify-center min-h-screen  overflow-hidden p-32">
+      <div className="bg-green-200 p-24   m-auto rounded-xl shadow-xl w-[782px] ">
+        <h2 className="text-3xl font-semibold text-center  text-black uppercase mb-16">
+          Sign Up
+        </h2>
         <form onSubmit={isValid}>
           <div className="mb-4">
             <input
-              className="border-2 rounded-lg text-black px-4 py-2 w-full bg-cyan-200 placeholder-pink-600::placeholder"
+              className="border-2 rounded-lg text-black px-4 py-2 w-full bg-white"
               type="text"
               id="username"
               name="username"
@@ -108,9 +110,10 @@ const SignUp = () => {
             />
             {userNameError && <p className="text-red-500">{userNameError}</p>}
           </div>
+          <br />
           <div className="mb-4">
             <input
-              className="border-2 rounded-lg px-4 py-2 text-black w-full bg-cyan-200 placeholder-pink-600::placeholder"
+              className="border-2 rounded-lg px-4 py-2 text-black w-full bg-white placeholder-pink-600::placeholder"
               type="email"
               id="email"
               name="email"
@@ -120,9 +123,10 @@ const SignUp = () => {
             />
             {emailError && <p className="text-red-500">{emailError}</p>}
           </div>
+          <br />
           <div className="mb-4">
             <input
-              className="border-2 text-black rounded-lg px-4 py-2 w-full bg-cyan-200 placeholder-pink-600::placeholder"
+              className="border-2 text-black rounded-lg px-4 py-2 w-full bg-white placeholder-pink-600::placeholder"
               type="password"
               id="password"
               name="password"
@@ -132,22 +136,27 @@ const SignUp = () => {
             />
             {passwordError && <p className="text-red-500">{passwordError}</p>}
           </div>
+          <br />
 
           {/* New select input for role */}
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <select
               className="border-2 rounded-lg px-4 py-2 text-black w-full bg-cyan-200"
               value={role}
               onChange={(e) => setRole(e.target.value)}
             >
+
+
+
+
               <option value="">Select Role</option>
               <option value="customer">Customer</option>
               <option value="driver">Driver</option>
             </select>
             {roleError && <p className="text-red-500">{roleError}</p>}
-          </div>
+          </div> */}
           <button
-            className="bg-cyan-500 hover:bg-cyan-700 text-black font-italic py-2 px-4 rounded-lg w-full"
+            className="w-[150px] px-4  py-2 tracking-wide  bg-green-700 rounded-xl text-white transition-colors duration-200 transform bg-black-700  hover: bg-white-600 focus:outline-none  ml-56 focus:bg-black-600"
             type="submit"
             onClick={handleSignUp}
           >

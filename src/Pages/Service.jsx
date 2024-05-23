@@ -35,7 +35,7 @@ const Service = () => {
                 </NavLink>
               </div>
             </nav>
-            <h1 class="text-3xl text-white font-extrabold sm:text-5xl">
+            <h1 class="text-3xl text-white font-bold sm:text-4xl">
               Experience Convenience Our Service Offerings
             </h1>
           </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom"; 
 import { GrFormNext } from "react-icons/gr";
+import { IoAdd } from "react-icons/io5";
 const About = () => {
   return (
     <>
@@ -32,7 +33,7 @@ const About = () => {
                 </NavLink>
               </div>
             </nav>
-            <h1 class="text-3xl text-white font-extrabold sm:text-5xl">
+            <h1 class="text-3xl text-white font-bold sm:text-3xl">
               Our Story of Service and Excellence
             </h1>
           </div>
@@ -67,6 +68,17 @@ const About = () => {
                 repellat.
               </p>
               <br />
+              {/* <div className="flex flex-row gap-4">
+                <p>24</p>
+                <IoAdd className="text-green-600 text-xl" />
+              </div>
+              <p>Years of Experience</p>
+
+              <div className="flex flex-row gap-4">
+                <p>1000</p>
+                <IoAdd className="text-green-600 text-xl" />
+              </div>
+              <p>Professional Drivers</p> */}
             </div>
           </div>
         </div>
@@ -147,6 +159,39 @@ const About = () => {
                 the evolving needs of our users.
               </p>
             </a>
+            <div className="text-gray-500 m-4 text-xl  ">
+              <div className="flex flex-row justify-between w-full">
+                <p>Safety Ride</p>
+                <p>92%</p>
+              </div>
+              <div class="w-full bg-gray-200 h-1.5 rounded-md">
+                <div class="w-11/12 bg-green-600 h-1.5 rounded-md"></div>
+              </div>
+              <br />
+              <div className="flex flex-row justify-between w-full">
+                <p>Quality Service</p>
+                <p>89%</p>
+              </div>
+              <div class="w-full bg-gray-200 h-1.5 rounded-md">
+                <div class="w-10/12 bg-green-600 h-1.5 rounded-md"></div>
+              </div>
+              <br />
+              <div className="flex flex-row justify-between w-full">
+                <p>Happy Passenger</p>
+                <p>95%</p>
+              </div>
+              <div class="w-full bg-gray-200 h-1.5 rounded-md">
+                <div class="w-11/12 bg-green-600 h-1.5 rounded-md"></div>
+              </div>
+              <br />
+              <div className="flex flex-row justify-between w-full">
+                <p>Affordable Pricing</p>
+                <p>85%</p>
+              </div>
+              <div class="w-full bg-gray-200 h-1.5 rounded-md">
+                <div class="w-5/6 bg-green-600 h-1.5 rounded-md"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

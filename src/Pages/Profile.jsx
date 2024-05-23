@@ -110,7 +110,7 @@ function ProfileForm() {
   };
 
   return (
-    <div className="flex justify-center bg-cyan-700 p-36">
+    <div className="flex justify-center bg-white p-36">
       <div>
         <h1
           className="text-center text-2xl mb-32"
@@ -125,7 +125,7 @@ function ProfileForm() {
 
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-2 gap-8 w-full px-6 py-8 mt-10 mb-11 bg-cyan-300 rounded-lg shadow-lg"
+          className="grid grid-cols-2 gap-8 w-full px-6 py-8 mt-10 mb-11 bg-green-300 rounded-lg shadow-lg"
         >
           <div>
             {/* Profile Picture */}
@@ -237,11 +237,11 @@ function ProfileForm() {
                 className="w-full rounded-lg border-gray-200 bg-cyan-200 text-black p-4 text-sm shadow-sm"
               >
                 <option value="">Select</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
+                <option value="A">B</option>
+                <option value="B">B1</option>
                 <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
+                <option value="D">C1</option>
+
               </select>
               {errors.drivingLicenseCategory && (
                 <p className="text-red-500">{errors.drivingLicenseCategory}</p>
