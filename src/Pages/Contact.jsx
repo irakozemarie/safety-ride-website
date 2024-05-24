@@ -50,7 +50,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className="relative bg-[url(car1.jpg)] bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-[url(./car1.jpg)] bg-cover bg-center bg-no-repeat">
       
 
         <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">

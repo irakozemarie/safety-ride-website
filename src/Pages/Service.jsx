@@ -7,7 +7,7 @@ import Cards from "../Components/card";
 const Service = () => {
   return (
     <>
-      <section className="relative bg-[url(car1.jpg)] bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-[url(./car1.jpg)] bg-cover bg-center bg-no-repeat">
         <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
           <div class="mx-auto max-w-xl text-center">
             <nav className=" flex flex-row  p-4">
