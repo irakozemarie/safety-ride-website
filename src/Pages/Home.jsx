@@ -96,9 +96,7 @@ const Home = () => {
                 </button>
               </Link>
               <Link to={"/Login"}>
-                <button
-                  className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto"
-                >
+                <button className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-500 shadow hover:text-green-500 focus:outline-none focus:ring active:text-green-500 sm:w-auto">
                   Become a Driver
                 </button>
               </Link>
@@ -125,10 +123,9 @@ const Home = () => {
               </h2>
 
               <p className="mt-4 text-gray-600">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                qui hic atque tenetur quis eius quos ea neque sunt, accusantium
-                soluta minus veniam tempora deserunt? Molestiae eius quidem quam
-                repellat.
+                Embark on your journey worry-free, with seamless arrangements
+                ensuring a smooth adventure and Explore the world with peace of
+                mind, knowing that every detail is taken care of.
               </p>
               <br />
 
@@ -192,10 +189,9 @@ const Home = () => {
                 </h2>
 
                 <p className="mt-4 text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aliquid, molestiae! Quidem est esse numquam odio deleniti,
-                  beatae, magni dolores provident quaerat totam eos, aperiam
-                  architecto eius quis quibusdam fugiat dicta.
+                  Embark on your journey with peace of mind, as we meticulously
+                  ensure your safety, comfort, and every detail, promising you a
+                  confident, hassle-free travel experience.
                 </p>
                 <br />
                 <br />
@@ -211,8 +207,8 @@ const Home = () => {
                     </h3>
 
                     <p className="text-gray-600">
-                      Sed adipisci velit, sed quia <br />
-                      non numquam eius modi
+                      Ensuring a safe environment <br />
+                      is paramount to us.
                     </p>
                   </div>
 

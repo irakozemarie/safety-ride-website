@@ -6,13 +6,16 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const isValidEmail = (email) => {
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex = new RegExp(
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    );
     return emailRegex.test(email);
   };
 
   const isStrongPassword = (password) => {
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const passwordRegex = new RegExp(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+    );
     return passwordRegex.test(password);
   };
 
@@ -24,9 +27,9 @@ const SignUp = () => {
   const [passwordError, setPasswordError] = useState("");
   const [role, setRole] = useState("");
   const [roleError, setRoleError] = useState("");
+  const [signupMessage, setSignupMessage] = useState("");
 
-  const isValid = (e) => {
-    e.preventDefault();
+  const isValid = () => {
     let valid = true;
 
     if (!userName.trim()) {
@@ -49,12 +52,14 @@ const SignUp = () => {
     if (!password.trim()) {
       setPasswordError("Password is required");
       valid = false;
-    } else if (!isStrongPassword(password)) {
-      setPasswordError(
-        "Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character"
-      );
-      valid = false;
-    } else {
+    }
+    //  else if (!isStrongPassword(password)) {
+    //   setPasswordError(
+    //     "Password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character"
+    //   );
+    //   valid = false;
+    // }
+    else {
       setPasswordError("");
     }
 
@@ -68,45 +73,35 @@ const SignUp = () => {
     return valid;
   };
 
-  // const handleSignUp = async (e) => {
-  //   e.preventDefault();
-
-  //   const form = {
-  //     userName: userName,
-  //     email: email,
-  //     password: password,
-  //     role: role,
-  //   };
-  //   // console.log(form);
-  //   // if (!isValid(e))
-  //   const response = await axios
-  //     .post(
-  //       "https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signup",
-  //       form
-  //     )
-  //     .then((response) => {
-  //       console.log("response",response.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  //   console.log(response);
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // if (!isValid()) return;
+
     const form = {
-      userName: userName,
       email: email,
       password: password,
+      userName: userName,
       role: role,
     };
-    // console.log(form);
+
+    console.log(form);
 
     try {
-      const response = await axios.post(
+      const res = await fetch(
         "https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signup",
-        form
+        {
+          method: "POST",
+          body: JSON.stringify(form),
+          "Content-Type": "application/json",
+        }
       );
-      console.log("response", response.data);
+      // const response = await axios.post(
+      //   "https://safety-drive-connect-backend-project-2.onrender.com/api/v1/signup",
+      //   { email, password, userName, role }
+      // );
+      const data = await res.json();
+      console.log("response", data);
+      // setSignupMessage("Signup successful!");
       // Optionally, you can redirect the user after successful signup
       // navigate('/success');
     } catch (error) {
@@ -114,14 +109,16 @@ const SignUp = () => {
     }
   };
 
-
-  return (  
-    <div className="bg-white border-blackflex flex-col justify-center min-h-screen  overflow-hidden p-32">
-      <div className="bg-green-200 p-24   m-auto rounded-xl shadow-xl w-[782px] ">
-        <h2 className="text-3xl font-semibold text-center  text-black uppercase mb-16">
+  return (
+    <div className="bg-white border-blackflex flex-col justify-center min-h-screen overflow-hidden p-32">
+      <div className="bg-green-200 p-24 m-auto rounded-xl shadow-xl w-[782px] ">
+        <h2 className="text-3xl font-semibold text-center text-black uppercase mb-16">
           Sign Up
         </h2>
-        <form onSubmit={handleSubmit}>
+        {signupMessage && (
+          <p className="text-green-500 text-center">{signupMessage}</p>
+        )}
+        <form>
           <div className="mb-4">
             <input
               className="border-2 rounded-lg text-black px-4 py-2 w-full bg-white"
@@ -177,9 +174,10 @@ const SignUp = () => {
             {roleError && <p className="text-red-500">{roleError}</p>}
           </div>
           <button
-            className="w-[150px] px-4  py-2 tracking-wide  bg-green-700 rounded-xl text-white transition-colors duration-200 transform bg-black-700  hover: bg-white-600 focus:outline-none  ml-56 focus:bg-black-600"
-            type="submit"
-            onClick={handleSubmit}
+            className="w-[150px] px-4 py-2 tracking-wide bg-green-700 rounded-xl text-white transition-colors duration-200 transform bg-black-700 hover: bg-white-600 focus:outline-none ml-56 focus:bg-black-600"
+            onClick={(e) => {
+              handleSubmit(e);
+            }}
           >
             Sign Up
           </button>

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { GrFormNext } from "react-icons/gr";
 import { FaCar } from "react-icons/fa6";
 import { GrCaretDown } from "react-icons/gr";
 import Cards from "../Components/card";
+
+
 const Service = () => {
+ 
   return (
     <>
+
       <section className="relative bg-[url(./car1.jpg)] bg-cover bg-center bg-no-repeat">
         <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
           <div class="mx-auto max-w-xl text-center">

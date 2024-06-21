@@ -62,11 +62,11 @@ const OTP = () => {
   };
 
   return (
-    <div className="bg-cyan-200 p-36">
+    <div className="bg-green-200 p-36">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <input
-            className="border-2 text-black rounded-lg px-4 py-2 w-full bg-cyan-500 placeholder-pink-600::placeholder"
+            className="border-2 text-black rounded-lg px-4 py-2 w-full bg-white placeholder-pink-600::placeholder"
             type="text"
             id="otp"
             name="otp"
@@ -78,7 +78,7 @@ const OTP = () => {
         </div>
         <button
           type="submit"
-          className="w-full rounded-lg bg-cyan-700 px-5 py-3 text-sm font-medium text-black mb-4"
+          className="w-full rounded-lg bg-green-700 px-5 py-3 text-sm font-medium text-green-100 mb-4"
         >
           Verify
         </button>

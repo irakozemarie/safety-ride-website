@@ -42,7 +42,7 @@ function Login() {
         onSubmit={handleSubmit}
         className="bg-green-200 p-24   m-auto rounded-xl shadow-xl w-[782px] "
       >
-        <h2 className="text-3xl font-semibold text-center  text-black uppercase mb-16">
+        <h2 className="text-3xl font-semibold text-center  text-black uppercase mb-16 ">
           LOG IN
         </h2>
 

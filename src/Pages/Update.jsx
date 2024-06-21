@@ -46,34 +46,27 @@ function UpdatePassword() {
     }
   };
 
-  const handleForgotPassword = () => {
-    // Handle forgot password functionality (e.g., send reset password link via email)
-    console.log("Forgot Password clicked");
-  };
-
   return (
-    <div className="mx-auto max-w-screen-xl bg-cyan-700 p-36">
+    <div className="mx-auto max-w-screen-xl p-4 md:p-36">
       <div className="mx-auto max-w-md">
-        {" "}
-        {/* Adjusted max-w-lg to max-w-md */}
         <form
           onSubmit={handleSubmit}
-          className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-cyan-300"
+          className="mb-0 mt-24 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8 bg-green-200"
         >
-          <p className="text-center text-lg font-medium text-black">
+          <p className="text-center text-lg md:text-xl font-medium text-black">
             Update Password
           </p>
 
           {/* Email input */}
           <div>
-            <label htmlFor="email" className="sr-only text-pink-500">
+            <label htmlFor="email" className="sr-only ">
               Email
             </label>
             <input
               type="email"
               value={email}
               onChange={handleEmailChange}
-              className={`w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm text-black bg-cyan-200 ${
+              className={`w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm text-black bg-white ${
                 errors.email ? "border-red-500" : ""
               }`}
               placeholder="Email"
@@ -92,7 +85,7 @@ function UpdatePassword() {
               type="password"
               value={password}
               onChange={handlePasswordChange}
-              className={`w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm text-black bg-cyan-200 ${
+              className={`w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm text-black bg-white ${
                 errors.password ? "border-red-500" : ""
               }`}
               placeholder="Password"
@@ -111,7 +104,7 @@ function UpdatePassword() {
               type="password"
               value={confirmPassword}
               onChange={handleConfirmPasswordChange}
-              className={`w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm text-black bg-cyan-200 ${
+              className={`w-full rounded-lg border-gray-200 p-4 text-sm shadow-sm text-black bg-white ${
                 errors.confirmPassword ? "border-red-500" : ""
               }`}
               placeholder="Confirm Password"
@@ -125,14 +118,14 @@ function UpdatePassword() {
 
           <button
             type="submit"
-            className="block w-full rounded-lg bg-cyan-700 px-5 py-3 text-sm font-medium text-black"
+            className="block w-full rounded-lg bg-green-700 px-5 py-3 text-sm font-medium text-green-100"
           >
             Update Password
           </button>
 
           <p className="text-center text-sm text-gray-500 mt-4">
-            don't need to change the passoword?{" "}
-            <a className="text-black" href="/">
+            Don't need to change the password?{" "}
+            <a className="text-black" href="/Login">
               Sign In
             </a>
           </p>
